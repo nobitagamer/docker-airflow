@@ -70,6 +70,8 @@ RUN set -ex \
         /usr/share/doc \
         /usr/share/doc-base
 
+COPY --from gcr.io/oauth2l/oauth2l:1.1.0 /bin/oauth2l /bin/oauth2l
+
 COPY script/entrypoint.sh /entrypoint.sh
 COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 
